@@ -41,6 +41,7 @@ module Standard
             RuboCop::ConfigLoader.instance_variable_set(:@default_configuration, combined_config)
             next_config, path = config_for_plugin(plugin, runner_context)
 
+            remove_disabled_rules!(next_config)
             next_config["AllCops"], all_cop_keys_configured_by_plugins = merge_all_cop_settings(
               combined_config["AllCops"],
               next_config["AllCops"],
@@ -121,6 +122,14 @@ module Standard
             options_config[key] = value
           end
         end
+      end
+
+      def remove_disabled_rules!(config)
+        config.keys.each do |key|
+          next if MANDATORY_RUBOCOP_CONFIG_KEYS.include?(key)
+          config.delete(key) if config[key].is_a?(Hash) && config[key]["Enabled"] == false
+        end
+        config
       end
 
       def all_cop_keys_previously_configured_by_plugins(options_config, permit_merging:)
