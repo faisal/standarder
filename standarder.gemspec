@@ -1,14 +1,14 @@
 require_relative "lib/standard/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "standard"
+  spec.name = "standarder"
   spec.version = Standard::VERSION
-  spec.authors = ["Justin Searls"]
-  spec.email = ["searls@gmail.com"]
-  spec.required_ruby_version = ">= 3.0.0"
+  spec.authors = ["Faisal N Jawdat"]
+  spec.email = ["standarder@faisal.com"]
+  spec.required_ruby_version = ">= 3.3.0"
 
   spec.summary = "Ruby Style Guide, with linter & automatic code fixer"
-  spec.homepage = "https://github.com/standardrb/standard"
+  spec.homepage = "https://github.com/faisal/standarder"
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = spec.homepage
   spec.metadata["changelog_uri"] = "#{spec.homepage}/blob/main/CHANGELOG.md"
@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
   spec.metadata["rubygems_mfa_required"] = "true"
 
-  spec.add_dependency "rubocop", "~> 1.84.0"
+  spec.add_dependency "rubocop", "< 2.0"
 
   spec.add_dependency "lint_roller", "~> 1.0"
   spec.add_dependency "standard-custom", "~> 1.0.0"
