@@ -1,3 +1,13 @@
+# Standard Ruby, only more
+
+This is a very minimal fork of Standard Ruby that adds the following changes:
+
+- Do not disable default Rubocop cops
+- Enable NewCop
+- Update minimum and target Ruby versions to 3.3
+
+Everything below this line is default Standard Ruby content.
+
 <img src="https://user-images.githubusercontent.com/79303/233717126-9fd13e6d-9a66-4f1c-b40c-fe875cb1d1b4.png" style="width: 100%"/>
 
 [![Tests](https://github.com/standardrb/standard/actions/workflows/test.yml/badge.svg)](https://github.com/standardrb/standard/actions/workflows/test.yml)

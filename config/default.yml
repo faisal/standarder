@@ -1,7 +1,9 @@
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.3
   Exclude: []
   DisabledByDefault: true
+  DisplayCopNames: true
+  NewCops: enable
   StyleGuideBaseURL: https://github.com/standardrb/standard
 
 Lint/Syntax:
